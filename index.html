@@ -1,0 +1,366 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prestwich Plodmen</title>
+  <meta name="description" content="Prestwich's premier medium-effort running collective." />
+
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --card: #171717;
+      --text: #f4f4f4;
+      --muted: #b5b5b5;
+      --yellow: #f4c623;
+      --border: #2b2b2b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(244,198,35,.08), transparent 55%);
+      pointer-events: none;
+    }
+
+    .hero {
+      width: 100%;
+      z-index: 2;
+    }
+
+    .logo {
+      width: min(420px, 80vw);
+      margin-bottom: 1rem;
+      animation: float 4s ease-in-out infinite;
+      filter: drop-shadow(0 0 25px rgba(244,198,35,.15));
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    h1 {
+      font-size: clamp(3rem, 9vw, 6rem);
+      line-height: 0.95;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .tagline {
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      color: var(--yellow);
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+
+    .intro {
+      max-width: 700px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    section {
+      padding: 5rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.5rem;
+      transition: transform .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card h3 {
+      margin-bottom: .75rem;
+      color: var(--yellow);
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+
+    th, td {
+      padding: 1rem;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      background: var(--card);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .stat {
+      background: var(--card);
+      padding: 2rem 1rem;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+    }
+
+    .stat-number {
+      font-size: 2.3rem;
+      font-weight: bold;
+      color: var(--yellow);
+    }
+
+    blockquote {
+      background: var(--card);
+      border-left: 4px solid var(--yellow);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      color: var(--muted);
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: #888;
+      border-top: 1px solid var(--border);
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--yellow);
+      color: #111;
+      padding: .9rem 1.4rem;
+      border-radius: 999px;
+      text-decoration: none;
+      margin-top: 2rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container hero">
+    <img class="logo" src="logo.png" alt="Prestwich Plodmen logo">
+
+    <h1>Prestwich<br>Plodmen</h1>
+
+    <p class="tagline">Prestwich's premier medium-effort running collective.</p>
+
+    <p class="intro">
+      Neither fast nor furious. Just a loose association of people who occasionally run,
+      frequently complain about hills, and strongly believe every jog should end near a café or pub.
+    </p>
+
+    <a class="btn" href="#join">Begin Your Gentle Athletic Journey</a>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <h2>About The Plod</h2>
+    <p>
+      Founded after several people reluctantly agreed that running feels marginally more bearable in company,
+      the Prestwich Plodmen are dedicated to steady movement, exaggerated weather complaints, and celebrating
+      “personal bests” with absolutely no verification.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Membership Requirements</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Required Skills</h3>
+        <ul>
+          <li>Can identify a hill and complain about it</li>
+          <li>Comfortable discussing knee pain</li>
+          <li>Own trainers of uncertain age</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Core Beliefs</h3>
+        <ul>
+          <li>Tempo runs are aspirational</li>
+          <li>Strava may contain creative interpretation</li>
+          <li>Stopping for snacks is tactical</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Dress Code</h3>
+        <ul>
+          <li>Questionable shorts encouraged</li>
+          <li>At least one expensive running item</li>
+          <li>Despite no measurable improvement</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Official Training Schedule</h2>
+
+    <table>
+      <tr>
+        <th>Day</th>
+        <th>Activity</th>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td>Conversational 5k (mainly gossip)</td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td>Intervals* <br><small>*Not medically verified intervals</small></td>
+      </tr>
+      <tr>
+        <td>Saturday</td>
+        <td>Long run / accidental bakery stop</td>
+      </tr>
+      <tr>
+        <td>Sunday</td>
+        <td>Recovery walk while claiming it counts</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Club Achievements</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-number">14,000+</div>
+        <p>Complaints about hills</p>
+      </div>
+
+      <div class="stat">
+        <div class="stat-number">98%</div>
+        <p>Rain survival rate</p>
+      </div>
+
+      <div class="stat">
+        <div class="stat-number">3</div>
+        <p>Confirmed runner's highs</p>
+      </div>
+
+      <div class="stat">
+        <div class="stat-number">∞</div>
+        <p>Excuses for skipped sessions</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Testimonials</h2>
+
+    <blockquote>
+      “Thought I'd get fitter. Mainly gained strong opinions about socks.” — Dave, age undisclosed
+    </blockquote>
+
+    <blockquote>
+      “Nobody judges your pace. They do judge your post-run pastry choices.” — Sandra
+    </blockquote>
+
+    <blockquote>
+      “Accidentally joined. Still here because someone brings flapjacks.” — Anonymous Plodman
+    </blockquote>
+  </div>
+</section>
+
+<section id="join">
+  <div class="container" style="text-align:center;">
+    <h2>Join The Plod</h2>
+    <p>
+      Membership is entirely unofficial, emotionally supportive, and loosely organised.
+      If you've ever slowed to walking and called it interval training — you're one of us.
+    </p>
+  </div>
+</section>
+
+<footer>
+  Prestwich Plodmen™ — proudly unaffiliated with athletic excellence.
+</footer>
+
+</body>
+</html>
+```
+
+### Setup
+
+1. Save the uploaded bear image as **`logo.png`** in the same folder.
+2. Save the HTML above as **`index.html`**.
+3. Upload both files to your GitHub Pages repo.
+4. Enable GitHub Pages in repository settings.
+
+Structure:
+
+```txt
+/index.html
+/logo.png
+```
